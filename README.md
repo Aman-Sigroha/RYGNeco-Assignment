@@ -16,7 +16,11 @@ A modern, responsive, and feature-rich personal task management app built with R
 - Smooth animations and transitions
 
 ## 🖼 Screenshots
-<!-- Add screenshots here after deployment -->
+
+![Dashboard - No Tasks](public/screenshot-1.png)
+![Add Task Modal](public/screenshot-2.png)
+![Task List with Task](public/screenshot-3.png)
+![Task Details Modal](public/screenshot-4.png)
 
 ## 🛠 Technologies Used
 - React.js (functional components, hooks)
