@@ -89,7 +89,7 @@ function ConfirmDeleteModal({ task, onCancel, onConfirm }) {
 
 function App() {
   const [username, setUsername] = useState(getUsername());
-  const [tasks, setTasksState] = useState(getTasks());
+  const [tasks, setTasksState] = useState(() => getTasks(getUsername()));
   const [filter, setFilter] = useState('all');
   const [editingTask, setEditingTask] = useState(null);
   const [search, setSearch] = useState('');
@@ -104,8 +104,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setTasks(tasks);
-  }, [tasks]);
+    if (username) {
+      setTasksState(getTasks(username));
+    }
+  }, [username]);
+
+  useEffect(() => {
+    if (username) setTasks(username, tasks);
+  }, [tasks, username]);
 
   useEffect(() => {
     document.body.classList.toggle('dark', dark);
